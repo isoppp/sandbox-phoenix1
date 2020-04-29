@@ -7,15 +7,35 @@ defmodule MyApp.Auth.User do
   schema "users" do
     field :email, :string
     field :is_active, :boolean, default: false
+    field :password, :string, virtual: true
+    field :password_hash, :string
 
-    timestamps()
+    timestamps(type: :utc_datetime)
   end
 
   @doc false
   def changeset(user, attrs) do
     user
-    |> cast(attrs, [:email, :is_active])
-    |> validate_required([:email, :is_active])
+    |> cast(attrs, [:email, :is_active, :password])
+    |> validate_required([:email, :is_active, :password])
     |> unique_constraint(:email)
+    |> put_password_hash()
+  end
+
+  # means if change has valid as true and password key,
+  defp put_password_hash(
+         %Ecto.Changeset{
+           valid?: true,
+           changes: %{
+             password: password
+           }
+         } = changeset
+       ) do
+    change(changeset, Bcrypt.add_hash(password))
+  end
+
+  # else...
+  defp put_password_hash(changeset) do
+    changeset
   end
 end

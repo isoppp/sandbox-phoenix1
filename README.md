@@ -37,7 +37,9 @@ following: https://lobotuerto.com/blog/building-a-json-api-in-elixir-with-phoeni
 
 - live dashboard
   - /dashboard
-  
+
+- mix
+  - install deps `mix deps.get`  
 
 ### User
 
@@ -48,3 +50,6 @@ following: https://lobotuerto.com/blog/building-a-json-api-in-elixir-with-phoeni
  
 - generator help
   - `mix help phx.gen.context`
+
+- to use utc_timestamp
+  - `timestamps(type: :utc_datetime)`
