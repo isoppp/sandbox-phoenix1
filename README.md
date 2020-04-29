@@ -27,3 +27,13 @@ following: https://lobotuerto.com/blog/building-a-json-api-in-elixir-with-phoeni
 
 - init command
   - mix phx.new . --app my_app --module MyApp --no-html --no-webpack --binary-id
+
+- create/drop db
+  - mix ecto.create
+  - mix ecto.drop
+  - MIX_ENV=test mix ecto.drop
+  
+- live dashboard
+  - /dashboard
+  
+  
