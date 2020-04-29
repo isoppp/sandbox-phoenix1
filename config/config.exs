@@ -11,6 +11,9 @@ config :my_app,
   ecto_repos: [MyApp.Repo],
   generators: [binary_id: true]
 
+# Change default time stamp type as a utc_datetime
+config :my_app, MyApp.Repo, migration_timestamps: [type: :utc_datetime]
+
 # Configures the endpoint
 config :my_app, MyAppWeb.Endpoint,
   url: [host: "localhost"],
