@@ -36,4 +36,11 @@ following: https://lobotuerto.com/blog/building-a-json-api-in-elixir-with-phoeni
 - live dashboard
   - /dashboard
   
+
+### User
+
+- `mix phx.gen.context Auth User users email:string:unique is_active:boolean`
+  - Auth is context's module name
+  - User is schema's module name
+  - users is the DB table's name
   
