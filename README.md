@@ -32,7 +32,9 @@ following: https://lobotuerto.com/blog/building-a-json-api-in-elixir-with-phoeni
   - mix ecto.create
   - mix ecto.drop
   - MIX_ENV=test mix ecto.drop
-  
+  - mix ecto.rollback --step 1
+    - https://hexdocs.pm/ecto_sql/Ecto.Migration.html
+
 - live dashboard
   - /dashboard
   
@@ -43,4 +45,6 @@ following: https://lobotuerto.com/blog/building-a-json-api-in-elixir-with-phoeni
   - Auth is context's module name
   - User is schema's module name
   - users is the DB table's name
-  
+ 
+- generator help
+  - `mix help phx.gen.context`
