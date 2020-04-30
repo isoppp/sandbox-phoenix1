@@ -29,3 +29,4 @@ my_app-*.tar
 
 ## personal
 .docker
+.elixir_ls
