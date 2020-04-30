@@ -41,6 +41,9 @@ following: https://lobotuerto.com/blog/building-a-json-api-in-elixir-with-phoeni
 - mix
   - install deps `mix deps.get`  
 
+- run REPL with mix
+  - `iex -S mix`
+
 ### User
 
 - `mix phx.gen.context Auth User users email:string:unique is_active:boolean`
