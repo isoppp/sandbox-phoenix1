@@ -24,12 +24,7 @@ defmodule MyApp.Auth.User do
 
   # means if change has valid as true and password key,
   defp put_password_hash(
-         %Ecto.Changeset{
-           valid?: true,
-           changes: %{
-             password: password
-           }
-         } = changeset
+         %Ecto.Changeset{valid?: true, changes: %{password: password}} = changeset
        ) do
     change(changeset, Bcrypt.add_hash(password))
   end
